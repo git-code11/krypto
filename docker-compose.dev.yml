@@ -11,16 +11,18 @@ services:
     environment:
       ENV_VARIABLE: ${ENV_VARIABLE}
       NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
-
+      NEXT_WEBPACK_USEPOLLING: 1
     # Set envrionment variables based on the .env file
     env_file:
       - .env
     volumes:
-      - ./next-app/src:/app/src
-      - ./next-app/public:/app/public
+      - /c/development/krypto/next-app/src:/app/src
+      - /c/development/krypto/next-app/public:/app/public
+      - vs_code:/root/.vscode-server
     restart: always
     ports:
-      - 3000:3000
+      #- 3000:3000
+      - 8000:3000
     networks:
       - my_network
 
@@ -30,4 +32,7 @@ services:
 # with each other, by using their container name as a hostname
 networks:
   my_network:
-    external: true
+#    external: true
+
+volumes:
+  vs_code:
