@@ -73,17 +73,11 @@ export default () => {
             open={isOpen}
             onClose={()=>setIsOpen(false)}
         >
-            
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                <ListItem key={text} disablePadding>
-                    <ListItemButton>
-                    <ListItemIcon>
-                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                    </ListItemIcon>
+                {['Home', 'About US', 'Service', 'Contact'].map((text, index) => (
+                <ListItemButton key={text} disablePadding>
                     <ListItemText primary={text} />
-                    </ListItemButton>
-                </ListItem>
+                </ListItemButton>
                 ))}
             </List>
             
