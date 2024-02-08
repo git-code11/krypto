@@ -16,7 +16,7 @@ import ContactCard from '@/components/ContactCard';
 
 
 export default function HomePage() {
-  const isDesktop = useMediaQuery(theme=>theme.breakpoints.up('md'));
+  const isDesktop = useMediaQuery((theme:Theme)=>theme.breakpoints.up('md'));
   
   return (
     <>
